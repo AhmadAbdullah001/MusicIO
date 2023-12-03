@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            font-family: 'Borel', cursive;
+            font-family: 'Hedvig Letters Serif', serif;
+            font-size: 18px;
+        }
+
+        body {
+
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            background-image: url(ImagesUsed/Bgimage.jpg);
+            backdrop-filter: blur(170px);
+            background-repeat: no-repeat;
+            background-size: 100% 120%;
+            filter: brightness(125%);
+
+        }
+
+        .NavBar {
+            margin-top: 10px;
+            width: 90vw;
+            height: 8vh;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            border: solid 2px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            border-radius: 120px;
+        }
+
+        li {
+            list-style: none;
+            color: white;
+        }
+
+        .NavBar img {
+            /* margin-left: 10px; */
+            position: absolute;
+            left: 2%;
+            width: 100px;
+            height: 50px;
+        }
+
+        #Home {
+            margin-top: -6px;
+            position: absolute;
+            left: 12%;
+            color: white;
+            cursor: pointer;
+        }
+
+        .NavBar input {
+            width: 250px;
+            height: 20px;
+            position: absolute;
+            left: 40%;
+            border-radius: 20px;
+            border: none;
+            /* border: black 2px solid; */
+            box-shadow: 1px 1px 10px black;
+            padding: 5px;
+            padding-bottom: 12px;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>');
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: 220px center;
+            /* Adjust the position of the icon */
+            padding-top: 15px;
+        }
+
+        .NavBar input:focus {
+            outline: none;
+
+            padding-top: 15px;
+
+            transform: scale(120%);
+            transition-duration: 100ms;
+        }
+
+        .NavBar input:hover {
+            transform: scale(120%);
+            transition-duration: 300ms;
+        }
+
+        input::placeholder {
+            position: fixed;
+            top: 4px;
+            left: 7px;
+            color: black;
+        }
+
+        #User {
+            margin-top: 15px;
+            margin-left: 82vw;
+            /* position: absolute; */
+            /* left: 93%; */
+            color: White;
+            font-family: 'Borel', cursive;
+        }
+
+        .Part2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /*Center Container*/
+        .Center {
+            margin-top: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 65%;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+        }
+
+        .A {
+
+            height: 200px;
+            width: 1300px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .A img {
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            object-fit: inherit;
+            overflow: hidden;
+        }
+
+        .ImageBar {
+            position: absolute;
+            /* border: solid red 1px; */
+            top: 0;
+            left: -10vw;
+            height: 30vh;
+            width: 100vw;
+        }
+
+        #ImageArijit {
+            /* border: solid red 1px; */
+            position: relative;
+            object-fit: cover;
+            object-position: 50% 17%;
+        }
+
+        .Artists {
+
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 85%;
+            height: 40%;
+            overflow-x: scroll;
+        }
+
+        .Music {
+            position: relative;
+            top: 70px;
+            margin-bottom: 8%;
+            width: 58vw;
+            height: 48vh;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 1px 1px 7px black;
+            border-color: transparent;
+            background: rgba(255, 255, 255, 0.1);
+            border: solid 2px rgba(255, 255, 255, 0.5);
+            justify-content: center;
+        }
+
+
+        .Songs {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            overflow-y: scroll;
+        }
+
+        #Player {
+            /* opacity: 0; */
+            position: relative;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            width: 50vw;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            bottom: 3%;
+        }
+
+        #Bar {
+            width: 40vw;
+        }
+
+        #btn1 {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: transparent;
+        }
+
+        #btn2 {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: transparent;
+        }
+
+        #btn3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            position: relative;
+            bottom: 5px;
+            border: none;
+        }
+
+        #btn3 svg {
+            position: relative;
+            /* top: 6px; */
+            left: 2px;
+        }
+
+        #btn4 {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: transparent;
+            border: none;
+            /* background-color: transparent; */
+        }
+
+        #btn5 {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: transparent;
+        }
+
+        .Song {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .Song img {
+            /* border: solid red 1px; */
+            border-radius: 100px;
+            margin-left: 10px;
+        }
+
+        .Music ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .Music ::-webkit-scrollbar-thumb {
+            background-color: lightsteelblue;
+            border-radius: 1rem;
+            border: solid 2rem transparent;
+            background-color: content-box;
+        }
+
+        .Artists::-webkit-scrollbar {
+            height: 2px;
+        }
+
+        .Artists::-webkit-scrollbar-thumb {
+            background-color: lightsteelblue;
+            border-radius: 1rem;
+            border: solid 2rem transparent;
+            background-color: content-box;
+        }
+
+        #SongImg {
+            /* border: solid red 1px; */
+            height: 70px;
+            width: 70px;
+            object-fit: cover;
+            position: absolute;
+            right: 91%;
+            top: 10px;
+            border-radius: 100px;
+            opacity: 0%;
+            animation: Rotate 20s linear infinite;
+        }
+
+        @keyframes Rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #Start {
+            position: absolute;
+            top: 10px;
+            font-size: 15px;
+            right: 45rem;
+        }
+
+        #End {
+            top: 10px;
+            font-size: 15px;
+            left: 45rem;
+            position: absolute;
+        }
+
+        .Headings {
+            width: 100%;
+            border-bottom: solid white 1px;
+            display: flex;
+            position: absolute;
+            /* bottom: 50px; */
+            top: 0px;
+            justify-content: space-evenly;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .Song {
+            margin-top: 30px;
+            display: flex;
+            height: 70px;
+            cursor: pointer;
+
+        }
+
+        .Artist {
+            position: relative;
+
+        }
+
+        .Section {
+            display: flex;
+            justify-content: space-evenly;
+            /* border: solid red 1px; */
+            width: 74%;
+            margin-left: 50px;
+        }
+
+        #Song1 .Artist {
+            position: relative;
+            right: 55px;
+        }
+
+        #Song2 .Artist {
+            position: relative;
+            right: 30px;
+
+        }
+
+        #Song3 .Artist {
+            position: relative;
+            right: 60px;
+        }
+
+
+        .Name {
+            position: relative;
+            right: 60px;
+        }
+
+        .Artist {
+            position: relative;
+            right: 40px;
+        }
+
+        .Time {
+            position: relative;
+            right: 0px;
+        }
+
+        #Song1 .Time {
+            position: relative;
+            left: -4px;
+        }
+
+        #Song2 .Time {
+            position: relative;
+            left: 9px;
+        }
+
+        #Song3 .Time {
+            position: relative;
+            left: -2px;
+        }
+
+
+        #Icons {
+            position: relative;
+            top: 15px;
+            right: 30px;
+        }
+
+        .Songs img {
+            height: 75px;
+            width: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NavBar Starts here -->
+    <div class="Part1">
+        <center>
+            <div class="NavBar">
+                <img src="ImagesUsed/Logo.png" alt="Can't Load" />
+                <a href="index.html">
+                    <li id="Home">Home</li>
+                </a>
+                <input type="search" name="" id="Search" placeholder="Search.." />
+                <li id="User">THE TITANS</li>
+            </div>
+        </center>
+    </div>
+    <!-- End -->
+
+    <!-- Centre Side Starts here -->
+    <div class="Center">
+        <div class="Artists">
+            <div class="A">
+                <div class="ImageBar">
+                    <img id="ImageArijit" src="ImagesUsed/Badult.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="Music">
+            <div class="Headings">
+                <li id="Title">Title</li>
+                <li id="ArtistName">Artist</li>
+                <li id="Duration">Duration</li>
+            </div>
+            <div class="Songs">
+                <div id="Song1" class="Song" onclick="song1()">
+                    <img src="ImagesUsed/Dj wale babu.jpeg" alt="Can't Load" />
+                    <!-- <div class="Section"> -->
+                    <p class="Name">DJ wale Babu</p>
+                    <p class="Artist">Badshah</p>
+                    <p class="Time">02:49</p>
+                    <div id="Icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path
+                                d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                        </svg>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div id="Song2" class="Song" onclick="song2()">
+                    <img id="Jugnu" src="ImagesUsed/Jugnu.jpg" alt="Can't Load" />
+                    <!-- <div class="Section"> -->
+                    <p class="Name">Jugnu</p>
+                    <p class="Artist">Badshah</p>
+                    <p class="Time">03:50</p>
+
+                    <div id="Icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path
+                                d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                        </svg>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div id="Song3" class="Song" onclick="song3()">
+                    <img id="Wakhra" src="ImagesUsed/Wakhra Swag.jpg" alt="Can't Load" />
+                    <!-- <div class="Section"> -->
+                    <p class="Name">Wakhra Swag</p>
+                    <p class="Artist">Badshah</p>
+                    <p class="Time">03:10</p>
+                    <div id="Icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path
+                                d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
+                            </path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                        </svg>
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div id="Player">
+            <div class="bar">
+
+                <audio src="" id="Song"></audio>
+                <input type="range" name="" id="Bar" value="0" max="" />
+            </div>
+            <div class="btns">
+                <img src="" alt="" id="SongImg">
+                <p id="Start">00:00</p>
+                <button id="btn1">
+                    <img src="" alt="" /><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: ">
+                        <path
+                            d="M17 17h-1.559l-9.7-10.673A1 1 0 0 0 5.001 6H2v2h2.559l4.09 4.5-4.09 4.501H2v2h3.001a1 1 0 0 0 .74-.327L10 13.987l4.259 4.686a1 1 0 0 0 .74.327H17v3l5-4-5-4v3z">
+                        </path>
+                        <path
+                            d="M15.441 8H17v3l5-3.938L17 3v3h-2.001a1 1 0 0 0-.74.327l-3.368 3.707 1.48 1.346L15.441 8z">
+                        </path>
+                    </svg>
+                </button>
+                <button id="btn2">
+                    <!-- <img src="" alt="" /> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: ">
+                        <path d="M12 12V7l-7 5 7 5zm7-5-7 5 7 5z"></path>
+                    </svg>
+                </button>
+                <button id="btn3" onclick="ChangeIcon()">
+                    <!-- <img src="" alt="" /> -->
+                    <svg id="Play" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: ">
+                        <path d="M7 6v12l10-6z"></path>
+                    </svg>
+                </button>
+                <button id="btn4">
+                    <!-- <img src="" alt="" /> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: ">
+                        <path d="m19 12-7-5v10zM5 7v10l7-5z"></path>
+                    </svg>
+                </button>
+                <button id="btn5">
+                    <img src="" alt="" /><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: ">
+                        <path
+                            d="M19 7a1 1 0 0 0-1-1h-8v2h7v5h-3l3.969 5L22 13h-3V7zM5 17a1 1 0 0 0 1 1h8v-2H7v-5h3L6 6l-4 5h3v6z">
+                        </path>
+                    </svg>
+                </button>
+                <p id="End">00:00</p>
+            </div>
+            <!-- VOlume Controller -->
+            <div class="volume">
+                <input type="range" min="0" max="100" value="90" class="range">
+                <span id="pervalue"></span>
+            </div>
+
+        </div>
+        <!-- <script src=""></script> -->
+    </div>
+    </div>
+    <!--Ends-->
+
+    </div>
+
+    <script src=""></script>
+</body>
+<script src="Badshah.js"></script>
+
+</html>
